@@ -96,7 +96,7 @@ async fn main() -> Result<(), Error> {
         .expect("Could not read EEPROM len");
 
     // Kilobits to bits to bytes, and undoing the offset
-    let len = ((u16::from_le_bytes(len_buf) + 1) * 1024) / 8;
+    let len: u16 = (u16::from_le_bytes(len_buf) + 1) * (1024 / 8);
 
     log::info!("--> Device EEPROM is {} bytes long", len);
 
