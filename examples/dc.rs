@@ -25,9 +25,9 @@ use ta::Next;
 
 /// Maximum number of slaves that can be stored. This must be a power of 2 greater than 1.
 const MAX_SLAVES: usize = 16;
-const MAX_PDU_DATA: usize = PduStorage::element_size(1100);
+const MAX_PDU_DATA: usize = PduStorage::element_size(2048);
 const MAX_FRAMES: usize = 32;
-const PDI_LEN: usize = 64;
+const PDI_LEN: usize = 2048;
 
 static PDU_STORAGE: PduStorage<MAX_FRAMES, MAX_PDU_DATA> = PduStorage::new();
 
